@@ -31,26 +31,11 @@ def mergeSort(unsortedList):
 
 import matplotlib.pyplot as plt
 
-
-
-def animate(frame_number):
-  # Simulate sorting process by modifying data partially
-  # based on the frame number (replace with actual merge logic)
-  global data_to_sort
-  sorted_part = frame_number * len(data_to_sort) // 10  # Adjust factor for speed
-  data_to_sort[:sorted_part] = sorted(data_to_sort[:sorted_part])
-  line.set_ydata(data_to_sort)
-  return line,
-
-fig, ax = plt.subplots()
-data_to_sort = [54, 26, 93, 17, 77, 31, 44, 55, 20]
-x = range(len(data_to_sort))
-line, = ax.plot(x, data_to_sort)
-ax.set_ylim(min(data_to_sort) - 5, max(data_to_sort) + 5)
-ax.set_title('Merge Sort Visualization')
-ax.set_xlabel('Position')
-ax.set_ylabel('Value')
-
-animation = FuncAnimation(fig, animate, frames=11, interval=100)  # Adjust frames and interval
+my_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
+x = range(len(my_list))
+plt.plot(x, my_list)
 plt.show()
-
+mergeSort(my_list)
+x = range(len(my_list))
+plt.plot(x, my_list)
+plt.show()
